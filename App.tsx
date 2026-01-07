@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Download, Copy, Bot, Check, ArrowDown, ChevronRight } from 'lucide-react';
 
@@ -18,6 +17,7 @@ const App: React.FC = () => {
       <section className="min-h-screen flex flex-col justify-between p-6 md:p-12 border-b border-zinc-900 relative overflow-hidden">
         <div className="flex justify-between items-start z-10">
           <div>
+            {/* Logo pequeno no cabeçalho também atualizado para imagem se desejar, ou mantido texto como 'marca registrada' */}
             <h1 className="text-xl font-black tracking-tighter uppercase">BRICK.®</h1>
             <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">Repository v.25.01</p>
           </div>
@@ -32,11 +32,14 @@ const App: React.FC = () => {
         </div>
 
         <div className="z-10 flex flex-col items-center justify-center flex-1">
-          <div className="relative group">
-            <h2 className="text-[18vw] font-[900] tracking-tighter leading-[0.75] uppercase text-center select-none group-hover:italic transition-all duration-700">
-              BRICK
-            </h2>
-            <div className="absolute -bottom-4 right-0 text-red-600 font-black text-xs tracking-widest uppercase">
+          <div className="relative group w-full max-w-[80vw] flex justify-center">
+             {/* Substituído o texto gigante pelo logo oficial */}
+             <img 
+               src="/brick-logo-white.png" 
+               alt="BRICK" 
+               className="w-full h-auto max-h-[40vh] object-contain select-none group-hover:scale-105 transition-transform duration-700"
+             />
+            <div className="absolute -bottom-8 right-0 text-red-600 font-black text-xs tracking-widest uppercase">
               Brand Assets Mother
             </div>
           </div>
@@ -65,12 +68,12 @@ const App: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
                {/* Solid Monolith */}
                <div className="relative aspect-[1/2] bg-zinc-950 flex flex-col items-center justify-center border border-zinc-900 group">
-                  <div className="w-2/3 h-2/3 bg-white transition-all duration-700 group-hover:bg-red-600"></div>
+                  <div className="w-2/3 h-auto aspect-[2/3] bg-white transition-all duration-700 group-hover:bg-red-600"></div>
                   <span className="absolute bottom-4 text-[8px] font-mono text-zinc-700 uppercase tracking-widest">Sólido</span>
                </div>
                {/* Hollow Monolith */}
                <div className="relative aspect-[1/2] bg-zinc-950 flex flex-col items-center justify-center border border-zinc-900 group">
-                  <div className="w-2/3 h-2/3 border-2 border-white transition-all duration-700 group-hover:border-red-600"></div>
+                  <div className="w-2/3 h-auto aspect-[2/3] border-2 border-white transition-all duration-700 group-hover:border-red-600"></div>
                   <span className="absolute bottom-4 text-[8px] font-mono text-zinc-700 uppercase tracking-widest">Vazado</span>
                </div>
             </div>
@@ -158,16 +161,24 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Monolito Positivo', bg: 'bg-white', text: 'text-black', content: 'BRICK' },
-              { label: 'Monolito Negativo', bg: 'bg-black', text: 'text-white border border-zinc-800', content: 'BRICK' },
-              { label: 'Monolito Highlight', bg: 'bg-red-600', text: 'text-white', content: 'BRICK' },
-              { label: 'Monolito Símbolo', bg: 'bg-zinc-900', text: 'text-white border border-zinc-800', content: '▮' }
+              // Invert filter usado para tornar o logo branco em preto quando o fundo é branco
+              { label: 'Monolito Positivo', bg: 'bg-white', invert: true, img: '/brick-logo-white.png' },
+              { label: 'Monolito Negativo', bg: 'bg-black', invert: false, border: 'border border-zinc-800', img: '/brick-logo-white.png' },
+              { label: 'Monolito Highlight', bg: 'bg-red-600', invert: false, img: '/brick-logo-white.png' },
+              // Uso do monolito png para manter proporção correta
+              { label: 'Monolito Símbolo', bg: 'bg-zinc-900', invert: false, border: 'border border-zinc-800', img: '/brick-monolith.png', isSymbol: true }
             ].map((v, i) => (
               <div key={i} className="flex flex-col items-center group">
-                 <div className={`${v.bg} aspect-[2/3] w-full flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer`}>
-                    <span className={`${v.text} text-3xl md:text-4xl font-[900] tracking-tighter uppercase transition-transform group-hover:scale-110 z-10`}>
-                      {v.content}
-                    </span>
+                 <div className={`${v.bg} ${v.border || ''} aspect-[2/3] w-full flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer`}>
+                    <img 
+                      src={v.img} 
+                      alt={v.label} 
+                      className={`
+                        ${v.isSymbol ? 'h-3/5 w-auto' : 'w-full'} 
+                        ${v.invert ? 'invert' : ''} 
+                        object-contain transition-transform group-hover:scale-110 z-10
+                      `}
+                    />
                  </div>
                  <span className="mt-4 text-[10px] uppercase font-bold tracking-widest text-zinc-500">{v.label}</span>
               </div>
@@ -175,10 +186,11 @@ const App: React.FC = () => {
           </div>
           
           <div className="mt-16 flex justify-center">
-            <button className="flex items-center gap-4 border border-zinc-800 px-10 py-5 group hover:bg-white hover:text-black transition-all">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em]">Download Asset Bundle (SVG)</span>
+            {/* Link para baixar o zip que está na pasta public */}
+            <a href="/brickassets.zip" download className="flex items-center gap-4 border border-zinc-800 px-10 py-5 group hover:bg-white hover:text-black transition-all">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em]">Download Asset Bundle (ZIP)</span>
               <Download size={16} />
-            </button>
+            </a>
           </div>
         </div>
       </section>
