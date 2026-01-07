@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { Download, Copy, Bot, Check, ArrowDown } from 'lucide-react';
+import { Download, Copy, Bot, Check, ArrowDown, Terminal, ImageIcon } from 'lucide-react';
 import { NAV_ITEMS, LOGO_VARIATIONS, COLOR_PALETTE } from './constants';
 
 const App: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [activePrompt, setActivePrompt] = useState<string | null>(null);
 
-  const handleCopy = (text: string) => {
+  const handleCopy = (text: string, promptKey?: string) => {
     navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (promptKey) {
+      setActivePrompt(promptKey);
+      setTimeout(() => setActivePrompt(null), 2000);
+    }
   };
+  const systemInstruction = `Você é um construtor da BRICK. Sempre use fundo preto puro (#000). Tipografia Inter com títulos em Black, tracking -0.05em, texto de apoio em Light. Vermelho puro (#FF0000) apenas para destaques. O monolito (retângulo 2:3) é a forma mestre. Tudo deve seguir o grid modular em múltiplos de 1/2, 1/4 e 1/8. Layouts devem ser minimalistas, tipográficos e com hierarquia agressiva.`;
+  const visualToken = `Minimalist brutalist brand system, pure black background, stark white typography in Inter, pure red highlights, monolith vertical geometry, modular grid construction, high contrast, studio lighting, matte textures, industrial UI, cinematic shadows, precision spacing, 4k, ultra sharp.`;
 
   return (
     <div className="bg-black text-white selection:bg-red-600 selection:text-white font-['Inter'] scroll-smooth">
@@ -300,26 +304,70 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* --- 06. AI DIRECTIVE --- */}
-      <section className="py-24 px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div className="max-w-3xl mx-auto text-center md:text-left">
-           <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
-              <Bot size={20} className="text-red-600" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">AI SYSTEM INSTRUCTION</span>
+      {/* --- 06. AI TRAINING CENTER --- */}
+      <section id="ai" className="py-32 px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div className="max-w-7xl mx-auto">
+           <div className="flex items-center gap-4 mb-8">
+              <Bot size={24} className="text-red-600" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">AI SYSTEM TRAINING FACILITY</span>
            </div>
-           <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-12 uppercase">Ensinando a Inteligência a Construir</h2>
            
-           <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm font-mono text-sm leading-relaxed text-zinc-400 group relative">
-              <p className="mb-6 text-red-600 font-bold uppercase tracking-tighter">System.Directive.BRICK</p>
-              <p>Ao gerar layouts para a marca BRICK: Fundo deve ser Preto (#000). Use tipografia branca em Inter Black com tracking negativo de -0.05em. Elementos disruptivos devem ser Vermelho Puro (#FF0000). A forma mestre é o Monolito (retângulo vertical proporção 2:3 ou similar). Mantenha alinhamento absoluto ao Grid Modular.</p>
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               
-              <button 
-                onClick={() => handleCopy("Instrução de Design: Brutalismo Minimalista. Paleta #000, #FFF, #FF0000. Grid Modular 1x1. Forma mestre: Monolito.")}
-                className="mt-8 flex items-center gap-3 text-white bg-zinc-800 px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all"
-              >
-                {copied ? <Check size={14} /> : <Copy size={14} />}
-                {copied ? 'Diretriz Copiada' : 'Copiar Prompt de Sistema'}
-              </button>
+              {/* --- BLOCO 1: SYSTEM PROMPT (Para ChatGPT/Claude - Lógica e Layout) --- */}
+              <div className="flex flex-col h-full">
+                 <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-8 uppercase flex items-center gap-3">
+                    <Terminal size={32} />
+                    Logic & Layout
+                 </h2>
+                 <p className="text-zinc-400 text-sm mb-6 leading-relaxed min-h-[40px]">
+                    Copie este bloco para IAs de texto para que elas entendam as regras de construção de interface, copy e estrutura da marca.
+                 </p>
+                 
+                 <div className="flex-1 bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm font-mono text-xs leading-relaxed text-zinc-400 group relative hover:border-zinc-700 transition-colors flex flex-col justify-between">
+                    <div>
+                        <div className="absolute top-0 left-0 w-1 h-full bg-zinc-700"></div>
+                        <p className="mb-4 text-white font-bold uppercase tracking-widest opacity-40">System.Directive.v2.5</p>
+                        <p>{systemInstruction}</p>
+                    </div>
+                    
+                    <button 
+                      onClick={() => handleCopy(systemInstruction, 'sys-prompt')}
+                      className="mt-8 flex items-center gap-3 text-white bg-zinc-800 px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all w-full justify-center"
+                    >
+                      {activePrompt === 'sys-prompt' ? <Check size={14} /> : <Copy size={14} />}
+                      {activePrompt === 'sys-prompt' ? 'Copiado para Clipboard' : 'Copiar Diretriz de Sistema'}
+                    </button>
+                 </div>
+              </div>
+
+              {/* --- BLOCO 2: VISUAL SYNTHESIS (Para Geradores de Imagem) --- */}
+              <div className="flex flex-col h-full">
+                 <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-8 uppercase flex items-center gap-3">
+                    <ImageIcon size={32} className="text-red-600" />
+                    Image Synthesis
+                 </h2>
+                 <p className="text-zinc-400 text-sm mb-6 leading-relaxed min-h-[40px]">
+                    <span className="text-red-600 font-bold">TOKEN VISUAL.</span> Copie este comando para geradores de imagem para recriar a atmosfera, iluminação e texturas da BRICK.
+                 </p>
+                 
+                 <div className="flex-1 bg-black border border-red-900/30 p-8 rounded-sm font-mono text-xs leading-relaxed text-red-100/70 group relative shadow-[0_0_30px_rgba(255,0,0,0.05)] flex flex-col justify-between">
+                    <div>
+                        <div className="absolute top-0 right-0 w-1 h-full bg-red-600"></div>
+                        <p className="mb-4 text-red-600 font-bold uppercase tracking-widest">Visual.Token.v1.0</p>
+                        <p className="break-words opacity-80">{visualToken}</p>
+                    </div>
+                    
+                    <button 
+                      onClick={() => handleCopy(visualToken, 'img-prompt')}
+                      className="mt-8 flex items-center gap-3 text-white bg-red-600 px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-red-700 transition-all w-full justify-center shadow-lg shadow-red-900/20"
+                    >
+                      {activePrompt === 'img-prompt' ? <Check size={14} /> : <Copy size={14} />}
+                      {activePrompt === 'img-prompt' ? 'Token Visual Copiado' : 'Copiar Token Visual'}
+                    </button>
+                 </div>
+              </div>
+
            </div>
         </div>
       </section>
