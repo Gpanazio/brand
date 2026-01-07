@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Showcase: React.FC = () => {
@@ -13,7 +12,8 @@ const Showcase: React.FC = () => {
     <div className="animate-in fade-in duration-700">
       <header className="mb-24">
         <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">05 / Showcase</span>
-        <h2 className="text-5xl font-black tracking-tighter uppercase">Aplicações Práticas</h2>
+        {/* Título ajustado para text-5xl */}
+        <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">Aplicações Práticas</h2>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -41,7 +41,8 @@ const Showcase: React.FC = () => {
       </div>
 
       <div className="mt-40 text-center border-t border-zinc-900 pt-32 mb-16">
-        <h2 className="text-9xl font-black tracking-tighter opacity-10 select-none mb-12">GRAND FINALE</h2>
+        {/* Grand Finale ajustado: Menos agressivo, mais poético */}
+        <h2 className="text-6xl md:text-7xl font-black tracking-tighter opacity-10 select-none mb-12">GRAND FINALE</h2>
         <p className="text-zinc-500 italic max-w-lg mx-auto">
           "The monolith does not explain itself. It is simply there. It is the beginning and the end. Like good design."
         </p>
