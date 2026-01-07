@@ -298,12 +298,6 @@ const App: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="flex gap-4 items-end">
-                    <div className="w-16 h-24 bg-white flex items-center justify-center font-black text-black text-4xl">B</div>
-                    <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-white text-4xl border border-zinc-800">r</div>
-                    <div className="w-16 h-24 bg-red-600 flex items-center justify-center font-black text-white text-4xl">i</div>
-                    <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-zinc-500 text-4xl border border-zinc-800">k</div>
-                  </div>
               </div>
             </div>
           </div>
