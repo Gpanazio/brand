@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ATTRIBUTES } from '../constants';
 
@@ -7,7 +6,8 @@ const Principles: React.FC = () => {
     <div className="animate-in fade-in duration-700">
       <header className="mb-24">
         <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">02 / Princípios</span>
-        <h2 className="text-5xl font-black tracking-tighter">ATRIBUTOS DA MARCA</h2>
+        {/* Header Reduzido */}
+        <h2 className="text-4xl md:text-5xl font-black tracking-tighter">ATRIBUTOS DA MARCA</h2>
       </header>
 
       <div className="space-y-32">
@@ -16,7 +16,8 @@ const Principles: React.FC = () => {
             <div className="lg:col-span-4">
               <div className="flex items-center gap-4 mb-8">
                 <span className="w-8 h-8 rounded-full border border-zinc-600 flex items-center justify-center text-xs font-bold">{index + 1}</span>
-                <h3 className="text-4xl font-black tracking-tighter group-hover:text-red-600 transition-colors">{attr.title}</h3>
+                {/* Título do atributo ajustado: text-3xl */}
+                <h3 className="text-3xl font-black tracking-tighter group-hover:text-red-600 transition-colors">{attr.title}</h3>
               </div>
               <div className="space-y-8">
                 <div>
