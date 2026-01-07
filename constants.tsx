@@ -1,28 +1,30 @@
 
-import React from 'react';
-import { 
-  Home, 
-  BookOpen, 
-  Layers, 
-  Download, 
-  Bot, 
-  Eye, 
-  ArrowRight 
-} from 'lucide-react';
 import { NavItem, SectionId, BrandAttribute } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: SectionId.HOME, label: 'Início' },
-  { id: SectionId.GUIDE, label: 'Conceito' },
-  { id: SectionId.PRINCIPLES, label: 'Princípios' },
-  { id: SectionId.ASSETS, label: 'Repositório' },
-  { id: SectionId.AI, label: 'IA Training' },
-  { id: SectionId.SHOWCASE, label: 'Showcase' },
+  { id: SectionId.MONOLITH, label: 'Monolith' },
+  { id: SectionId.GRID, label: 'Grid' },
+  { id: SectionId.LOGO, label: 'Logo' },
+  { id: SectionId.COLORS, label: 'Colors' },
+  { id: SectionId.TYPOGRAPHY, label: 'Type' },
 ];
 
 export const BRAND_COLOR_PRIMARY = '#ff0000'; // Pure Red from PDF
 export const BRAND_BG_DARK = '#000000';
 export const BRAND_TEXT_WHITE = '#ffffff';
+
+export const LOGO_VARIATIONS = [
+  { label: 'Monolito Positivo', bg: 'bg-white', invert: true, img: '/brick-logo-white.png' },
+  { label: 'Monolito Negativo', bg: 'bg-black', invert: false, border: 'border border-zinc-800', img: '/brick-logo-white.png' },
+  { label: 'Monolito Highlight', bg: 'bg-red-600', invert: false, img: '/brick-logo-white.png' },
+  { label: 'Monolito Símbolo', bg: 'bg-zinc-900', invert: false, border: 'border border-zinc-800', img: '/brick-monolith.png', isSymbol: true }
+];
+
+export const COLOR_PALETTE = [
+  { name: 'Pure Black', hex: '#000000', ratio: '90%', textColor: 'text-white' },
+  { name: 'Pure Red', hex: '#FF0000', ratio: '2%', textColor: 'text-white' },
+  { name: 'Pure White', hex: '#FFFFFF', ratio: '8%', textColor: 'text-black' }
+];
 
 export const ATTRIBUTES: BrandAttribute[] = [
   {

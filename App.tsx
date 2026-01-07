@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Download, Copy, Bot, Check, ArrowDown, ChevronRight } from 'lucide-react';
+import { Download, Copy, Bot, Check, ArrowDown } from 'lucide-react';
+import { NAV_ITEMS, LOGO_VARIATIONS, COLOR_PALETTE } from './constants';
 
 const App: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -22,11 +23,15 @@ const App: React.FC = () => {
           </div>
           <div className="text-right">
             <nav className="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
-              <a href="#monolith" className="hover:text-red-600 transition-colors">01 Monolith</a>
-              <a href="#grid" className="hover:text-red-600 transition-colors">02 Grid</a>
-              <a href="#logo" className="hover:text-red-600 transition-colors">03 Logo</a>
-              <a href="#colors" className="hover:text-red-600 transition-colors">04 Colors</a>
-              <a href="#typography" className="hover:text-red-600 transition-colors">05 Type</a>
+              {NAV_ITEMS.map((item, index) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="hover:text-red-600 transition-colors"
+                >
+                  {`${String(index + 1).padStart(2, '0')} ${item.label}`}
+                </a>
+              ))}
             </nav>
           </div>
         </div>
@@ -160,12 +165,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { label: 'Monolito Positivo', bg: 'bg-white', invert: true, img: '/brick-logo-white.png' },
-              { label: 'Monolito Negativo', bg: 'bg-black', invert: false, border: 'border border-zinc-800', img: '/brick-logo-white.png' },
-              { label: 'Monolito Highlight', bg: 'bg-red-600', invert: false, img: '/brick-logo-white.png' },
-              { label: 'Monolito Símbolo', bg: 'bg-zinc-900', invert: false, border: 'border border-zinc-800', img: '/brick-monolith.png', isSymbol: true }
-            ].map((v, i) => (
+            {LOGO_VARIATIONS.map((v, i) => (
               <div key={i} className="flex flex-col items-center group">
                  {/* Aspect Ratio ajustado de [2/3] para square para economizar altura */}
                  <div className={`${v.bg} ${v.border || ''} aspect-square w-full flex flex-col items-center justify-center p-8 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer`}>
@@ -206,11 +206,7 @@ const App: React.FC = () => {
           
           {/* Altura reduzida de 450px para 320px para maior elegância */}
           <div className="grid grid-cols-1 lg:grid-cols-3 h-[320px] gap-2">
-            {[
-              { name: 'Pure Black', hex: '#000000', ratio: '90%', textColor: 'text-white' },
-              { name: 'Pure Red', hex: '#FF0000', ratio: '2%', textColor: 'text-white' },
-              { name: 'Pure White', hex: '#FFFFFF', ratio: '8%', textColor: 'text-black' }
-            ].map((color, i) => (
+            {COLOR_PALETTE.map((color, i) => (
               <div 
                 key={i} 
                 className="relative group overflow-hidden cursor-pointer flex flex-col justify-end p-8"
