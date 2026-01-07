@@ -32,12 +32,12 @@ const App: React.FC = () => {
         </div>
 
         <div className="z-10 flex flex-col items-center justify-center flex-1">
-          <div className="relative group w-full max-w-hero-logo-container flex justify-center">
+          <div className="relative group w-full max-w-[90vw] flex justify-center">
              {/* Substituído o texto gigante pelo logo oficial */}
              <img 
                src="/brick-logo-white.png" 
                alt="BRICK" 
-               className="w-full h-auto max-h-hero-logo md:max-h-hero-logo-md object-contain select-none group-hover:scale-105 transition-transform duration-700"
+               className="w-full h-auto max-h-[50vh] md:max-h-[55vh] object-contain select-none group-hover:scale-105 transition-transform duration-700"
              />
             <div className="absolute -bottom-8 right-0 text-red-600 font-black text-xs tracking-widest uppercase">
               Brand Assets Mother
