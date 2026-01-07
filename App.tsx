@@ -17,7 +17,6 @@ const App: React.FC = () => {
       <section className="min-h-screen flex flex-col justify-between p-6 md:p-12 border-b border-zinc-900 relative overflow-hidden">
         <div className="flex justify-between items-start z-10">
           <div>
-            {/* Logo pequeno no cabeçalho mantido para identificação constante */}
             <h1 className="text-xl font-black tracking-tighter uppercase">BRICK.®</h1>
             <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">Repository v.25.01</p>
           </div>
@@ -34,7 +33,6 @@ const App: React.FC = () => {
 
         <div className="z-10 flex flex-col items-center justify-center flex-1">
           <div className="relative group w-full max-w-[80vw] flex justify-center">
-             {/* AJUSTE DE HARMONIA: Redução drástica da escala para "bem menor" (max-h 15vh a 20vh) */}
              <img 
                src="/brick-logo-white.png" 
                alt="BRICK" 
@@ -60,10 +58,11 @@ const App: React.FC = () => {
       </section>
 
       {/* --- 01. THE MONOLITH --- */}
-      <section id="monolith" className="py-32 px-6 md:px-12 border-b border-zinc-900">
+      <section id="monolith" className="py-24 px-6 md:px-12 border-b border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">01 / Símbolo</span>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-20 uppercase">O MONOLITO</h2>
+          {/* Título Ajustado: de text-8xl para text-6xl */}
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-16 uppercase">O MONOLITO</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="grid grid-cols-2 gap-4">
@@ -101,10 +100,10 @@ const App: React.FC = () => {
       </section>
 
       {/* --- 02. MODULAR GRID --- */}
-      <section id="grid" className="py-32 bg-zinc-950 px-6 md:px-12 relative overflow-hidden">
+      <section id="grid" className="py-24 bg-zinc-950 px-6 md:px-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">02 / Estrutura</span>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-20 uppercase">GRID MODULAR</h2>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-16 uppercase">GRID MODULAR</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4 space-y-12">
@@ -150,27 +149,26 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* --- 03. LOGO VARIATIONS (MONOLITH SHAPED) --- */}
-      <section id="logo" className="py-32 px-6 md:px-12 border-b border-zinc-900">
+      {/* --- 03. LOGO VARIATIONS --- */}
+      <section id="logo" className="py-24 px-6 md:px-12 border-b border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div>
               <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">03 / Identidade</span>
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">MARCA MÃE</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.9]">MARCA MÃE</h2>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              // Invert filter usado para tornar o logo branco em preto quando o fundo é branco
               { label: 'Monolito Positivo', bg: 'bg-white', invert: true, img: '/brick-logo-white.png' },
               { label: 'Monolito Negativo', bg: 'bg-black', invert: false, border: 'border border-zinc-800', img: '/brick-logo-white.png' },
               { label: 'Monolito Highlight', bg: 'bg-red-600', invert: false, img: '/brick-logo-white.png' },
-              // Uso do monolito png para manter proporção correta
               { label: 'Monolito Símbolo', bg: 'bg-zinc-900', invert: false, border: 'border border-zinc-800', img: '/brick-monolith.png', isSymbol: true }
             ].map((v, i) => (
               <div key={i} className="flex flex-col items-center group">
-                 <div className={`${v.bg} ${v.border || ''} aspect-[2/3] w-full flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer`}>
+                 {/* Aspect Ratio ajustado de [2/3] para square para economizar altura */}
+                 <div className={`${v.bg} ${v.border || ''} aspect-square w-full flex flex-col items-center justify-center p-8 relative overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer`}>
                     <img 
                       src={v.img} 
                       alt={v.label} 
@@ -187,7 +185,6 @@ const App: React.FC = () => {
           </div>
           
           <div className="mt-16 flex justify-center">
-            {/* Link para o Drive atualizado */}
             <a 
               href="https://drive.google.com/drive/u/1/folders/1K0IwFLr_Pw7whYcdEuQLsEWtlTvSzg6_" 
               target="_blank" 
@@ -202,12 +199,13 @@ const App: React.FC = () => {
       </section>
 
       {/* --- 04. COLORS --- */}
-      <section id="colors" className="py-32 px-6 md:px-12 bg-zinc-950">
+      <section id="colors" className="py-24 px-6 md:px-12 bg-zinc-950">
         <div className="max-w-7xl mx-auto">
           <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">04 / Cromatismo</span>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-20 uppercase">CORES</h2>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-16 uppercase">CORES</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 h-[450px] gap-2">
+          {/* Altura reduzida de 450px para 320px para maior elegância */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 h-[320px] gap-2">
             {[
               { name: 'Pure Black', hex: '#000000', ratio: '90%', textColor: 'text-white' },
               { name: 'Pure Red', hex: '#FF0000', ratio: '2%', textColor: 'text-white' },
@@ -236,10 +234,10 @@ const App: React.FC = () => {
       </section>
 
       {/* --- 05. TYPOGRAPHY --- */}
-      <section id="typography" className="py-32 px-6 md:px-12 bg-zinc-950 border-b border-zinc-900">
+      <section id="typography" className="py-24 px-6 md:px-12 bg-zinc-950 border-b border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">05 / Tipografia</span>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-20 uppercase">SISTEMA DE FONTES</h2>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-16 uppercase">SISTEMA DE FONTES</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             {/* Coluna de Texto e Regras */}
@@ -252,11 +250,11 @@ const App: React.FC = () => {
                         Download Inter
                     </a>
                   </div>
-                  <p className="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-4">INTER</p>
+                  {/* Tamanho reduzido para não competir com o título da seção */}
+                  <p className="text-6xl md:text-8xl font-black tracking-tighter leading-none mb-4">INTER</p>
                   <p className="text-zinc-400 text-lg leading-relaxed">
                     A tipografia BRICK é baseada na Inter, escolhida por sua legibilidade neutra e precisão técnica. Nos títulos, utilizamos o peso <span className="text-white font-bold">Black</span> com tracking negativo de <span className="text-white font-bold">-0.05em</span>.
                   </p>
-                  {/* Destaque para Inter Light conforme o PDF */}
                   <p className="text-zinc-500 text-sm mt-4 leading-relaxed italic border-l border-zinc-800 pl-4">
                     Para manifestos e descrições, a <span className="text-white font-medium italic">Inter Light (300)</span> traz clareza e objetividade, garantindo a perenidade visual e o contraste necessário com o peso dos títulos.
                   </p>
@@ -284,7 +282,6 @@ const App: React.FC = () => {
               <div className="absolute top-0 right-0 p-4 text-[8px] font-mono text-zinc-700 tracking-widest">SPECIMEN_BRK_05</div>
               <div className="space-y-12">
                   <div className="space-y-4">
-                    {/* Comparativo de Pesos */}
                     <div>
                       <p className="text-[10px] text-zinc-700 uppercase mb-2">Weight 900</p>
                       <p className="text-6xl md:text-8xl font-black tracking-tighter leading-none">AaBbCc</p>
@@ -301,7 +298,6 @@ const App: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Grid de Caracteres */}
                   <div className="flex gap-4 items-end">
                     <div className="w-16 h-24 bg-white flex items-center justify-center font-black text-black text-4xl">B</div>
                     <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-white text-4xl border border-zinc-800">r</div>
@@ -315,7 +311,7 @@ const App: React.FC = () => {
       </section>
 
       {/* --- 06. AI DIRECTIVE --- */}
-      <section className="py-32 px-6 md:px-12 bg-black border-t border-zinc-900">
+      <section className="py-24 px-6 md:px-12 bg-black border-t border-zinc-900">
         <div className="max-w-3xl mx-auto text-center md:text-left">
            <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
               <Bot size={20} className="text-red-600" />
