@@ -33,11 +33,11 @@ const App: React.FC = () => {
 
         <div className="z-10 flex flex-col items-center justify-center flex-1">
           <div className="relative group w-full max-w-[80vw] flex justify-center">
-             {/* AJUSTE DE HARMONIA: Redução da escala vertical para permitir respiro negativo (max-h reduzido) */}
+             {/* AJUSTE DE HARMONIA: Redução drástica da escala para "bem menor" (max-h 15vh a 20vh) */}
              <img 
                src="/brick-logo-white.png" 
                alt="BRICK" 
-               className="w-full h-auto max-h-[25vh] md:max-h-[35vh] object-contain select-none group-hover:scale-105 transition-transform duration-1000 ease-out"
+               className="w-full h-auto max-h-[15vh] md:max-h-[20vh] object-contain select-none group-hover:scale-105 transition-transform duration-1000 ease-out"
              />
             <div className="absolute -bottom-12 right-0 text-red-600 font-black text-[10px] tracking-[0.2em] uppercase opacity-80">
               Brand Assets Mother
@@ -117,7 +117,7 @@ const App: React.FC = () => {
               </div>
               <div className="border-l-2 border-red-600 pl-6 py-2">
                  <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Engenharia Visual</p>
-                 <p className="text-sm text-zinc-300">A malha modular BRICK garante que IAs gerem layouts coerentes com a proporção áurea da marca.</p>
+                 <p className="text-sm text-zinc-300">A malha modular BRICK garante que IAs gerem layouts coerentes com a proporção áurea da marca... Não é só sobre IA, é sobre qualquer um.</p>
               </div>
             </div>
             
