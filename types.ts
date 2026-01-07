@@ -11,7 +11,8 @@ export enum SectionId {
   MONOLITH = 'monolith',
   GRID = 'grid',
   LOGO = 'logo',
-  COLORS = 'colors'
+  COLORS = 'colors',
+  TYPOGRAPHY = 'typography'
 }
 
 export interface NavItem {

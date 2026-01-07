@@ -2,7 +2,6 @@
 import React from 'react';
 import { SectionId } from '../types';
 import { NAV_ITEMS } from '../constants';
-import { Menu, X } from 'lucide-react';
 
 interface SidebarProps {
   activeSection: SectionId;
