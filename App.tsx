@@ -27,6 +27,7 @@ const App: React.FC = () => {
               <a href="#grid" className="hover:text-red-600 transition-colors">02 Grid</a>
               <a href="#logo" className="hover:text-red-600 transition-colors">03 Logo</a>
               <a href="#colors" className="hover:text-red-600 transition-colors">04 Colors</a>
+              <a href="#typography" className="hover:text-red-600 transition-colors">05 Type</a>
             </nav>
           </div>
         </div>
@@ -234,7 +235,86 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* --- 05. AI DIRECTIVE --- */}
+      {/* --- 05. TYPOGRAPHY --- */}
+      <section id="typography" className="py-32 px-6 md:px-12 bg-zinc-950 border-b border-zinc-900">
+        <div className="max-w-7xl mx-auto">
+          <span className="text-red-600 font-bold text-xs uppercase tracking-widest mb-4 block">05 / Tipografia</span>
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-20 uppercase">SISTEMA DE FONTES</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+            {/* Coluna de Texto e Regras */}
+            <div className="lg:col-span-5 space-y-12">
+              <div>
+                  <div className="flex justify-between items-baseline mb-6">
+                    <h3 className="text-[10px] text-red-600 font-black uppercase tracking-[0.4em]">Fonte Primária</h3>
+                    <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors">
+                        <Download size={12} />
+                        Download Inter
+                    </a>
+                  </div>
+                  <p className="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-4">INTER</p>
+                  <p className="text-zinc-400 text-lg leading-relaxed">
+                    A tipografia BRICK é baseada na Inter, escolhida por sua legibilidade neutra e precisão técnica. Nos títulos, utilizamos o peso <span className="text-white font-bold">Black</span> com tracking negativo de <span className="text-white font-bold">-0.05em</span>.
+                  </p>
+                  {/* Destaque para Inter Light conforme o PDF */}
+                  <p className="text-zinc-500 text-sm mt-4 leading-relaxed italic border-l border-zinc-800 pl-4">
+                    Para manifestos e descrições, a <span className="text-white font-medium italic">Inter Light (300)</span> traz clareza e objetividade, garantindo a perenidade visual e o contraste necessário com o peso dos títulos.
+                  </p>
+              </div>
+
+              {/* Tabela de Pesos */}
+              <div className="space-y-4 pt-8">
+                  <div className="flex justify-between border-b border-zinc-900 pb-2">
+                    <span className="text-xs uppercase tracking-widest text-zinc-500">Títulos de Impacto</span>
+                    <span className="text-xs font-black uppercase">Inter Black / -5% Tracking</span>
+                  </div>
+                  <div className="flex justify-between border-b border-zinc-900 pb-2">
+                    <span className="text-xs uppercase tracking-widest text-zinc-500">Manifestos & Apoio</span>
+                    <span className="text-xs font-light uppercase">Inter Light (300)</span>
+                  </div>
+                  <div className="flex justify-between border-b border-zinc-900 pb-2">
+                    <span className="text-xs uppercase tracking-widest text-zinc-500">Textos Técnicos</span>
+                    <span className="text-xs font-mono uppercase">JetBrains Mono</span>
+                  </div>
+              </div>
+            </div>
+
+            {/* Coluna de Specimen Visual */}
+            <div className="lg:col-span-7 bg-black border border-zinc-900 p-12 relative group overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 text-[8px] font-mono text-zinc-700 tracking-widest">SPECIMEN_BRK_05</div>
+              <div className="space-y-12">
+                  <div className="space-y-4">
+                    {/* Comparativo de Pesos */}
+                    <div>
+                      <p className="text-[10px] text-zinc-700 uppercase mb-2">Weight 900</p>
+                      <p className="text-6xl md:text-8xl font-black tracking-tighter leading-none">AaBbCc</p>
+                    </div>
+                    <div className="pt-4">
+                      <p className="text-[10px] text-zinc-700 uppercase mb-2">Weight 300</p>
+                      <p className="text-4xl md:text-6xl font-light tracking-tight leading-none text-zinc-400">AaBbCc</p>
+                    </div>
+                  </div>
+                  
+                  <div className="border-t border-zinc-900 pt-8">
+                    <p className="text-2xl font-light leading-relaxed text-zinc-300 max-w-lg italic">
+                      "O design BRICK é um exercício de remoção. Se a fonte não comunica estrutura, ela é ruído."
+                    </p>
+                  </div>
+
+                  {/* Grid de Caracteres */}
+                  <div className="flex gap-4 items-end">
+                    <div className="w-16 h-24 bg-white flex items-center justify-center font-black text-black text-4xl">B</div>
+                    <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-white text-4xl border border-zinc-800">r</div>
+                    <div className="w-16 h-24 bg-red-600 flex items-center justify-center font-black text-white text-4xl">i</div>
+                    <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-zinc-500 text-4xl border border-zinc-800">k</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 06. AI DIRECTIVE --- */}
       <section className="py-32 px-6 md:px-12 bg-black border-t border-zinc-900">
         <div className="max-w-3xl mx-auto text-center md:text-left">
            <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
