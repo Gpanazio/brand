@@ -7,6 +7,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: SectionId.LOGO, label: 'Logo' },
   { id: SectionId.COLORS, label: 'Colors' },
   { id: SectionId.TYPOGRAPHY, label: 'Type' },
+  { id: SectionId.AI, label: 'AI' },
 ];
 
 export const BRAND_COLOR_PRIMARY = '#ff0000'; // Pure Red from PDF
