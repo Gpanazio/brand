@@ -68,12 +68,12 @@ const App: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
                {/* Solid Monolith */}
                <div className="relative aspect-[1/2] bg-zinc-950 flex flex-col items-center justify-center border border-zinc-900 group">
-                  <div className="w-2/3 h-auto aspect-[2/3] bg-white transition-all duration-700 group-hover:bg-red-600"></div>
+                  <div className="w-2/3 h-2/3 bg-white transition-all duration-700 group-hover:bg-red-600"></div>
                   <span className="absolute bottom-4 text-[8px] font-mono text-zinc-700 uppercase tracking-widest">Sólido</span>
                </div>
                {/* Hollow Monolith */}
                <div className="relative aspect-[1/2] bg-zinc-950 flex flex-col items-center justify-center border border-zinc-900 group">
-                  <div className="w-2/3 h-auto aspect-[2/3] border-2 border-white transition-all duration-700 group-hover:border-red-600"></div>
+                  <div className="w-2/3 h-2/3 border-2 border-white transition-all duration-700 group-hover:border-red-600"></div>
                   <span className="absolute bottom-4 text-[8px] font-mono text-zinc-700 uppercase tracking-widest">Vazado</span>
                </div>
             </div>
@@ -186,8 +186,13 @@ const App: React.FC = () => {
           </div>
           
           <div className="mt-16 flex justify-center">
-            {/* Link para baixar o zip que está na pasta public */}
-            <a href="/brickassets.zip" download className="flex items-center gap-4 border border-zinc-800 px-10 py-5 group hover:bg-white hover:text-black transition-all">
+            {/* Link para o Drive atualizado */}
+            <a 
+              href="https://drive.google.com/drive/u/1/folders/1K0IwFLr_Pw7whYcdEuQLsEWtlTvSzg6_" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 border border-zinc-800 px-10 py-5 group hover:bg-white hover:text-black transition-all"
+            >
               <span className="text-[10px] font-black uppercase tracking-[0.3em]">Download Asset Bundle (ZIP)</span>
               <Download size={16} />
             </a>
