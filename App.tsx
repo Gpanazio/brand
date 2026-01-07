@@ -117,7 +117,7 @@ const App: React.FC = () => {
               </div>
               <div className="border-l-2 border-red-600 pl-6 py-2">
                  <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Engenharia Visual</p>
-                 <p className="text-sm text-zinc-300">A malha modular BRICK garante que IAs gerem layouts coerentes com a proporção áurea da marca... Não é só sobre IA, é sobre qualquer um.</p>
+                <p className="text-sm text-zinc-300">A malha modular da BRICK é o trilho do design: ela faz qualquer layout nascer alinhado à proporção áurea da marca. É criar com liberdade, sem perder a assinatura.</p>
               </div>
             </div>
             
@@ -298,12 +298,6 @@ const App: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="flex gap-4 items-end">
-                    <div className="w-16 h-24 bg-white flex items-center justify-center font-black text-black text-4xl">B</div>
-                    <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-white text-4xl border border-zinc-800">r</div>
-                    <div className="w-16 h-24 bg-red-600 flex items-center justify-center font-black text-white text-4xl">i</div>
-                    <div className="w-16 h-24 bg-zinc-900 flex items-center justify-center font-light text-zinc-500 text-4xl border border-zinc-800">k</div>
-                  </div>
               </div>
             </div>
           </div>
