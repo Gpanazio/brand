@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <section className="min-h-screen flex flex-col justify-between p-6 md:p-12 border-b border-zinc-900 relative overflow-hidden">
         <div className="flex justify-between items-start z-10">
           <div>
-            {/* Logo pequeno no cabeçalho também atualizado para imagem se desejar, ou mantido texto como 'marca registrada' */}
+            {/* Logo pequeno no cabeçalho mantido para identificação constante */}
             <h1 className="text-xl font-black tracking-tighter uppercase">BRICK.®</h1>
             <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">Repository v.25.01</p>
           </div>
@@ -32,14 +32,14 @@ const App: React.FC = () => {
         </div>
 
         <div className="z-10 flex flex-col items-center justify-center flex-1">
-          <div className="relative group w-full max-w-[90vw] flex justify-center">
-             {/* Substituído o texto gigante pelo logo oficial */}
+          <div className="relative group w-full max-w-[80vw] flex justify-center">
+             {/* AJUSTE DE HARMONIA: Redução da escala vertical para permitir respiro negativo (max-h reduzido) */}
              <img 
                src="/brick-logo-white.png" 
                alt="BRICK" 
-               className="w-full h-auto max-h-[50vh] md:max-h-[55vh] object-contain select-none group-hover:scale-105 transition-transform duration-700"
+               className="w-full h-auto max-h-[25vh] md:max-h-[35vh] object-contain select-none group-hover:scale-105 transition-transform duration-1000 ease-out"
              />
-            <div className="absolute -bottom-8 right-0 text-red-600 font-black text-xs tracking-widest uppercase">
+            <div className="absolute -bottom-12 right-0 text-red-600 font-black text-[10px] tracking-[0.2em] uppercase opacity-80">
               Brand Assets Mother
             </div>
           </div>
@@ -266,7 +266,7 @@ const App: React.FC = () => {
             <p className="text-[10px] tracking-widest mt-1">Mother Asset Repository</p>
           </div>
           <p className="text-[10px] tracking-widest font-bold">Everything is logic. We build everything.</p>
-          <p className="text-[10px] tracking-tighter font-mono">© 2025 BRICK SYSTEM.</p>
+          <p className="text-zinc-400 text-[10px] tracking-tighter font-mono">© 2025 BRICK SYSTEM.</p>
         </div>
       </footer>
     </div>
