@@ -20,8 +20,8 @@ const Guide: React.FC = () => {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <img src="https://picsum.photos/seed/vissotto1/400/600" alt="Concept 1" className="grayscale hover:grayscale-0 transition-all duration-700 rounded-sm" />
-          <img src="https://picsum.photos/seed/vissotto2/400/600" alt="Concept 2" className="grayscale hover:grayscale-0 transition-all duration-700 rounded-sm mt-12" />
+          <img src="https://picsum.photos/seed/brick1/400/600" alt="Concept 1" className="grayscale hover:grayscale-0 transition-all duration-700 rounded-sm" />
+          <img src="https://picsum.photos/seed/brick2/400/600" alt="Concept 2" className="grayscale hover:grayscale-0 transition-all duration-700 rounded-sm mt-12" />
         </div>
       </div>
 

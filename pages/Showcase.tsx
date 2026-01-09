@@ -2,10 +2,10 @@ import React from 'react';
 
 const Showcase: React.FC = () => {
   const applications = [
-    { title: 'Out of Home', category: 'Publicidade', img: 'https://picsum.photos/seed/vissotto-ooh/1200/600' },
-    { title: 'Filmmaking House', category: 'Stationery', img: 'https://picsum.photos/seed/vissotto-stat/800/800' },
-    { title: 'Merchandising', category: 'Apparel', img: 'https://picsum.photos/seed/vissotto-app/800/800' },
-    { title: 'Digital Presence', category: 'Web', img: 'https://picsum.photos/seed/vissotto-web/1200/800' }
+    { title: 'Out of Home', category: 'Publicidade', img: 'https://picsum.photos/seed/brick-ooh/1200/600' },
+    { title: 'Filmmaking House', category: 'Stationery', img: 'https://picsum.photos/seed/brick-stat/800/800' },
+    { title: 'Merchandising', category: 'Apparel', img: 'https://picsum.photos/seed/brick-app/800/800' },
+    { title: 'Digital Presence', category: 'Web', img: 'https://picsum.photos/seed/brick-web/1200/800' }
   ];
 
   return (

@@ -12,7 +12,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
   return (
     <aside className="fixed left-0 top-0 h-full w-64 bg-black border-r border-zinc-800 z-50 p-8 flex flex-col">
       <div className="mb-16">
-        <h1 className="text-xl font-black tracking-tighter">VISSOTTO STUDIO.®</h1>
+        <h1 className="text-xl font-black tracking-tighter">BRICK.®</h1>
         <p className="text-[10px] text-zinc-500 mt-2 uppercase tracking-widest leading-tight">
           Visual Identity Bible<br/>v.2025.01
         </p>
