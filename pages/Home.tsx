@@ -6,7 +6,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <div className="flex justify-between items-start mb-24">
         {/* ... (cabeçalho mantém-se igual) */}
         <div>
-          <h2 className="text-sm font-medium text-zinc-400">Vissotto Studio.®</h2>
+          <h2 className="text-sm font-medium text-zinc-400">Brick.®</h2>
           <p className="text-xs text-zinc-500 italic">Everything is design, we design everything.</p>
         </div>
         <div className="text-right">

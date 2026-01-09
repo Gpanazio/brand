@@ -5,7 +5,7 @@ import { Bot, Copy, Check } from 'lucide-react';
 const AIInstruction: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
-  const promptText = `Atue como um Designer Sênior do Vissotto Studio. 
+  const promptText = `Atue como um Designer Sênior da Brick. 
 Diretrizes Visuais:
 1. Estética: Brutalismo minimalista, alto contraste.
 2. Paleta: Preto (#000000) predominante, Branco (#FFFFFF) para tipografia, Vermelho Puro (#FF0000) para destaques disruptivos.
@@ -37,7 +37,7 @@ Ao criar layouts, priorize o espaço negativo e a hierarquia tipográfica agress
             <h3 className="text-2xl font-bold">Prompting para Coerência</h3>
           </div>
           <p className="text-zinc-400 leading-relaxed text-lg">
-            Para garantir que as ferramentas de IA Generativa (Midjourney, DALL-E, Claude Artifacts) mantenham a integridade da marca Vissotto Studio, utilize o System Prompt estruturado ao lado.
+            Para garantir que as ferramentas de IA Generativa (Midjourney, DALL-E, Claude Artifacts) mantenham a integridade da marca Brick, utilize o System Prompt estruturado ao lado.
           </p>
           <div className="space-y-6">
             <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-600">Keywords Chave</h4>
